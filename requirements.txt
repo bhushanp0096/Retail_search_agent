@@ -1,0 +1,15 @@
+langgraph
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langchain-text-splitters
+langchain-chroma
+chromadb
+pypdf
+faiss-cpu
+sentence-transformers
+python-dotenv
+langchain-groq
+pandas
+Faker

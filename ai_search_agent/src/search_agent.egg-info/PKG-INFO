@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: search-agent
+Version: 0.1.0
+Summary: LangGraph-based AI search agent MVP for a retail/e-commerce catalog
+Requires-Python: >=3.10
+Requires-Dist: python-dotenv>=1.2.2

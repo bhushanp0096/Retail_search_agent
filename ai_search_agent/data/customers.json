@@ -1,0 +1,2042 @@
+[
+  {
+    "customer_id": "CUST-001",
+    "name": "Allison Hill",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "30",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "classic",
+      "athleisure",
+      "durable",
+      "vintage"
+    ],
+    "purchase_history": [
+      "PRD-1005"
+    ]
+  },
+  {
+    "customer_id": "CUST-002",
+    "name": "Noah Rhodes",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "28",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "sustainable",
+      "lightweight",
+      "preppy",
+      "durable"
+    ],
+    "purchase_history": [
+      "PRD-1461",
+      "PRD-1120",
+      "PRD-1288",
+      "PRD-1034",
+      "PRD-1198"
+    ]
+  },
+  {
+    "customer_id": "CUST-003",
+    "name": "Angie Henderson",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "34",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "streetwear",
+      "bohemian",
+      "classic"
+    ],
+    "purchase_history": [
+      "PRD-1294"
+    ]
+  },
+  {
+    "customer_id": "CUST-004",
+    "name": "Daniel Wagner",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "40",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "techwear",
+      "casual",
+      "streetwear",
+      "lightweight",
+      "minimalist"
+    ],
+    "purchase_history": [
+      "PRD-1256",
+      "PRD-1024",
+      "PRD-1141",
+      "PRD-1216",
+      "PRD-1062",
+      "PRD-1064",
+      "PRD-1232"
+    ]
+  },
+  {
+    "customer_id": "CUST-005",
+    "name": "Cristian Santos",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "38",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "luxury",
+      "minimalist",
+      "athleisure",
+      "formalwear",
+      "techwear"
+    ],
+    "purchase_history": []
+  },
+  {
+    "customer_id": "CUST-006",
+    "name": "Connie Lawrence",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "36",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "waterproof",
+      "casual",
+      "vintage",
+      "techwear",
+      "minimalist"
+    ],
+    "purchase_history": [
+      "PRD-1241"
+    ]
+  },
+  {
+    "customer_id": "CUST-007",
+    "name": "Abigail Shaffer",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "40",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "bohemian",
+      "techwear",
+      "durable",
+      "vintage"
+    ],
+    "purchase_history": [
+      "PRD-1041",
+      "PRD-1285",
+      "PRD-1397",
+      "PRD-1161",
+      "PRD-1253",
+      "PRD-1314"
+    ]
+  },
+  {
+    "customer_id": "CUST-008",
+    "name": "Gina Moore",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "40",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "formalwear",
+      "streetwear",
+      "breathable",
+      "vintage",
+      "preppy"
+    ],
+    "purchase_history": [
+      "PRD-1015"
+    ]
+  },
+  {
+    "customer_id": "CUST-009",
+    "name": "Gabrielle Davis",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "28",
+      "shoes": "12"
+    },
+    "style_preferences": [
+      "athleisure",
+      "streetwear"
+    ],
+    "purchase_history": [
+      "PRD-1442",
+      "PRD-1353",
+      "PRD-1371",
+      "PRD-1224",
+      "PRD-1116"
+    ]
+  },
+  {
+    "customer_id": "CUST-010",
+    "name": "Ryan Munoz",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "30",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "minimalist",
+      "waterproof",
+      "athleisure",
+      "durable"
+    ],
+    "purchase_history": []
+  },
+  {
+    "customer_id": "CUST-011",
+    "name": "Monica Herrera",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "28",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "bohemian",
+      "techwear"
+    ],
+    "purchase_history": [
+      "PRD-1139",
+      "PRD-1358",
+      "PRD-1088",
+      "PRD-1474",
+      "PRD-1071",
+      "PRD-1299"
+    ]
+  },
+  {
+    "customer_id": "CUST-012",
+    "name": "Jamie Arnold",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "30",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "athleisure",
+      "breathable",
+      "techwear",
+      "luxury"
+    ],
+    "purchase_history": [
+      "PRD-1268"
+    ]
+  },
+  {
+    "customer_id": "CUST-013",
+    "name": "Lisa Hensley",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "34",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "formalwear",
+      "bohemian",
+      "vintage",
+      "durable",
+      "classic"
+    ],
+    "purchase_history": [
+      "PRD-1116",
+      "PRD-1048",
+      "PRD-1136",
+      "PRD-1393",
+      "PRD-1152",
+      "PRD-1365",
+      "PRD-1043"
+    ]
+  },
+  {
+    "customer_id": "CUST-014",
+    "name": "Michele Williams",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "34",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "outdoor",
+      "casual",
+      "luxury"
+    ],
+    "purchase_history": []
+  },
+  {
+    "customer_id": "CUST-015",
+    "name": "Dylan Miller",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "28",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "lightweight",
+      "durable",
+      "streetwear"
+    ],
+    "purchase_history": [
+      "PRD-1054",
+      "PRD-1175",
+      "PRD-1107",
+      "PRD-1417",
+      "PRD-1303",
+      "PRD-1390",
+      "PRD-1271"
+    ]
+  },
+  {
+    "customer_id": "CUST-016",
+    "name": "Brian Ramirez",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "38",
+      "shoes": "12"
+    },
+    "style_preferences": [
+      "lightweight",
+      "athleisure",
+      "breathable",
+      "bohemian"
+    ],
+    "purchase_history": [
+      "PRD-1469"
+    ]
+  },
+  {
+    "customer_id": "CUST-017",
+    "name": "Holly Wood",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "34",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "lightweight",
+      "sustainable",
+      "durable",
+      "formalwear",
+      "streetwear"
+    ],
+    "purchase_history": [
+      "PRD-1143"
+    ]
+  },
+  {
+    "customer_id": "CUST-018",
+    "name": "Derek Zuniga",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "32",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "streetwear",
+      "athleisure",
+      "luxury",
+      "waterproof"
+    ],
+    "purchase_history": [
+      "PRD-1124"
+    ]
+  },
+  {
+    "customer_id": "CUST-019",
+    "name": "Lisa Jackson",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "42",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "minimalist",
+      "formalwear",
+      "techwear",
+      "bohemian"
+    ],
+    "purchase_history": [
+      "PRD-1181",
+      "PRD-1136",
+      "PRD-1061",
+      "PRD-1475",
+      "PRD-1282",
+      "PRD-1044",
+      "PRD-1182"
+    ]
+  },
+  {
+    "customer_id": "CUST-020",
+    "name": "Carla Gray",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "34",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "casual",
+      "breathable",
+      "bohemian",
+      "vintage",
+      "minimalist"
+    ],
+    "purchase_history": [
+      "PRD-1140",
+      "PRD-1190",
+      "PRD-1051",
+      "PRD-1026",
+      "PRD-1333",
+      "PRD-1196",
+      "PRD-1375"
+    ]
+  },
+  {
+    "customer_id": "CUST-021",
+    "name": "Margaret Hawkins DDS",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "34",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "durable",
+      "vintage",
+      "preppy"
+    ],
+    "purchase_history": [
+      "PRD-1272",
+      "PRD-1312",
+      "PRD-1253",
+      "PRD-1266"
+    ]
+  },
+  {
+    "customer_id": "CUST-022",
+    "name": "Patty Perez",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "30",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "luxury",
+      "streetwear"
+    ],
+    "purchase_history": [
+      "PRD-1059",
+      "PRD-1028",
+      "PRD-1459"
+    ]
+  },
+  {
+    "customer_id": "CUST-023",
+    "name": "Ethan Adams",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "36",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "streetwear",
+      "bohemian"
+    ],
+    "purchase_history": [
+      "PRD-1452",
+      "PRD-1318",
+      "PRD-1359"
+    ]
+  },
+  {
+    "customer_id": "CUST-024",
+    "name": "Tommy Walter",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "40",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "streetwear",
+      "luxury",
+      "classic",
+      "breathable",
+      "lightweight"
+    ],
+    "purchase_history": [
+      "PRD-1254",
+      "PRD-1106",
+      "PRD-1088",
+      "PRD-1403"
+    ]
+  },
+  {
+    "customer_id": "CUST-025",
+    "name": "Matthew Foster",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "38",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "preppy",
+      "minimalist",
+      "waterproof",
+      "outdoor"
+    ],
+    "purchase_history": [
+      "PRD-1465",
+      "PRD-1359",
+      "PRD-1319",
+      "PRD-1245",
+      "PRD-1379",
+      "PRD-1157",
+      "PRD-1437",
+      "PRD-1353"
+    ]
+  },
+  {
+    "customer_id": "CUST-026",
+    "name": "Judy Baker",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "32",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "vintage",
+      "casual"
+    ],
+    "purchase_history": [
+      "PRD-1461",
+      "PRD-1234",
+      "PRD-1073",
+      "PRD-1493",
+      "PRD-1007"
+    ]
+  },
+  {
+    "customer_id": "CUST-027",
+    "name": "Justin Baker",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "42",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "minimalist",
+      "vintage",
+      "athleisure",
+      "waterproof"
+    ],
+    "purchase_history": [
+      "PRD-1348",
+      "PRD-1390"
+    ]
+  },
+  {
+    "customer_id": "CUST-028",
+    "name": "Stephanie Ross",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "38",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "formalwear",
+      "luxury"
+    ],
+    "purchase_history": [
+      "PRD-1057",
+      "PRD-1024",
+      "PRD-1420",
+      "PRD-1009",
+      "PRD-1291",
+      "PRD-1349",
+      "PRD-1149"
+    ]
+  },
+  {
+    "customer_id": "CUST-029",
+    "name": "Zachary Hicks",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "32",
+      "shoes": "12"
+    },
+    "style_preferences": [
+      "streetwear",
+      "casual",
+      "athleisure"
+    ],
+    "purchase_history": [
+      "PRD-1232",
+      "PRD-1252",
+      "PRD-1377",
+      "PRD-1180",
+      "PRD-1280"
+    ]
+  },
+  {
+    "customer_id": "CUST-030",
+    "name": "Anthony Rodriguez",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "42",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "lightweight",
+      "minimalist",
+      "breathable",
+      "vintage"
+    ],
+    "purchase_history": [
+      "PRD-1364",
+      "PRD-1171",
+      "PRD-1457",
+      "PRD-1266"
+    ]
+  },
+  {
+    "customer_id": "CUST-031",
+    "name": "Rebecca Henderson",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "42",
+      "shoes": "6"
+    },
+    "style_preferences": [
+      "casual",
+      "minimalist",
+      "outdoor",
+      "sustainable"
+    ],
+    "purchase_history": [
+      "PRD-1338",
+      "PRD-1073",
+      "PRD-1183"
+    ]
+  },
+  {
+    "customer_id": "CUST-032",
+    "name": "James Ferrell",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "28",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "classic",
+      "sustainable",
+      "casual",
+      "waterproof",
+      "streetwear"
+    ],
+    "purchase_history": [
+      "PRD-1328",
+      "PRD-1056",
+      "PRD-1495",
+      "PRD-1141",
+      "PRD-1450",
+      "PRD-1321"
+    ]
+  },
+  {
+    "customer_id": "CUST-033",
+    "name": "Tricia Valencia",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "42",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "bohemian",
+      "classic",
+      "lightweight"
+    ],
+    "purchase_history": [
+      "PRD-1201",
+      "PRD-1302",
+      "PRD-1214",
+      "PRD-1484",
+      "PRD-1142"
+    ]
+  },
+  {
+    "customer_id": "CUST-034",
+    "name": "Nathan Maldonado",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "34",
+      "shoes": "6"
+    },
+    "style_preferences": [
+      "streetwear",
+      "breathable",
+      "durable",
+      "luxury"
+    ],
+    "purchase_history": [
+      "PRD-1148",
+      "PRD-1057",
+      "PRD-1497",
+      "PRD-1005",
+      "PRD-1256"
+    ]
+  },
+  {
+    "customer_id": "CUST-035",
+    "name": "Debra Davidson",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "32",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "casual",
+      "preppy",
+      "formalwear"
+    ],
+    "purchase_history": [
+      "PRD-1341",
+      "PRD-1084",
+      "PRD-1156",
+      "PRD-1250",
+      "PRD-1148",
+      "PRD-1034",
+      "PRD-1410",
+      "PRD-1151"
+    ]
+  },
+  {
+    "customer_id": "CUST-036",
+    "name": "Jeffrey Chavez",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "42",
+      "shoes": "6"
+    },
+    "style_preferences": [
+      "preppy",
+      "streetwear",
+      "minimalist"
+    ],
+    "purchase_history": [
+      "PRD-1157",
+      "PRD-1003",
+      "PRD-1221",
+      "PRD-1181",
+      "PRD-1339",
+      "PRD-1428",
+      "PRD-1001"
+    ]
+  },
+  {
+    "customer_id": "CUST-037",
+    "name": "Sherri Baker",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "36",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "preppy",
+      "athleisure",
+      "waterproof",
+      "classic"
+    ],
+    "purchase_history": [
+      "PRD-1074",
+      "PRD-1376",
+      "PRD-1101",
+      "PRD-1222"
+    ]
+  },
+  {
+    "customer_id": "CUST-038",
+    "name": "Cassandra Gaines",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "30",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "waterproof",
+      "formalwear",
+      "lightweight"
+    ],
+    "purchase_history": [
+      "PRD-1128",
+      "PRD-1416",
+      "PRD-1348",
+      "PRD-1327",
+      "PRD-1198"
+    ]
+  },
+  {
+    "customer_id": "CUST-039",
+    "name": "Elizabeth Fowler",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "40",
+      "shoes": "6"
+    },
+    "style_preferences": [
+      "preppy",
+      "casual",
+      "outdoor",
+      "formalwear"
+    ],
+    "purchase_history": [
+      "PRD-1348",
+      "PRD-1449",
+      "PRD-1166",
+      "PRD-1412",
+      "PRD-1297",
+      "PRD-1072"
+    ]
+  },
+  {
+    "customer_id": "CUST-040",
+    "name": "Brittany Farmer",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "34",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "breathable",
+      "sustainable",
+      "athleisure"
+    ],
+    "purchase_history": [
+      "PRD-1044",
+      "PRD-1153",
+      "PRD-1291",
+      "PRD-1475"
+    ]
+  },
+  {
+    "customer_id": "CUST-041",
+    "name": "Paula Moreno",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "42",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "durable",
+      "breathable",
+      "waterproof"
+    ],
+    "purchase_history": [
+      "PRD-1270",
+      "PRD-1227"
+    ]
+  },
+  {
+    "customer_id": "CUST-042",
+    "name": "Fred Smith",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "38",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "lightweight",
+      "classic",
+      "sustainable",
+      "luxury"
+    ],
+    "purchase_history": [
+      "PRD-1493",
+      "PRD-1211",
+      "PRD-1237",
+      "PRD-1015",
+      "PRD-1468",
+      "PRD-1287"
+    ]
+  },
+  {
+    "customer_id": "CUST-043",
+    "name": "Sherry Decker",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "40",
+      "shoes": "6"
+    },
+    "style_preferences": [
+      "preppy",
+      "luxury",
+      "casual"
+    ],
+    "purchase_history": [
+      "PRD-1192",
+      "PRD-1066",
+      "PRD-1318",
+      "PRD-1279",
+      "PRD-1461",
+      "PRD-1290",
+      "PRD-1450",
+      "PRD-1151"
+    ]
+  },
+  {
+    "customer_id": "CUST-044",
+    "name": "Anthony Humphrey",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "40",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "minimalist",
+      "lightweight",
+      "durable",
+      "formalwear",
+      "bohemian"
+    ],
+    "purchase_history": [
+      "PRD-1430",
+      "PRD-1028",
+      "PRD-1044",
+      "PRD-1029",
+      "PRD-1139",
+      "PRD-1425",
+      "PRD-1333"
+    ]
+  },
+  {
+    "customer_id": "CUST-045",
+    "name": "Angelica Tucker",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "38",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "preppy",
+      "formalwear"
+    ],
+    "purchase_history": [
+      "PRD-1443",
+      "PRD-1032",
+      "PRD-1063",
+      "PRD-1380",
+      "PRD-1300"
+    ]
+  },
+  {
+    "customer_id": "CUST-046",
+    "name": "Philip Cannon",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "28",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "casual",
+      "athleisure",
+      "bohemian"
+    ],
+    "purchase_history": [
+      "PRD-1070",
+      "PRD-1115",
+      "PRD-1459",
+      "PRD-1346",
+      "PRD-1328",
+      "PRD-1437",
+      "PRD-1080"
+    ]
+  },
+  {
+    "customer_id": "CUST-047",
+    "name": "John Pierce",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "36",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "formalwear",
+      "sustainable"
+    ],
+    "purchase_history": [
+      "PRD-1035"
+    ]
+  },
+  {
+    "customer_id": "CUST-048",
+    "name": "Shane Henderson",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "32",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "casual",
+      "streetwear"
+    ],
+    "purchase_history": [
+      "PRD-1105",
+      "PRD-1054",
+      "PRD-1243"
+    ]
+  },
+  {
+    "customer_id": "CUST-049",
+    "name": "Joshua Blair",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "42",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "streetwear",
+      "preppy"
+    ],
+    "purchase_history": [
+      "PRD-1248",
+      "PRD-1095",
+      "PRD-1420",
+      "PRD-1121",
+      "PRD-1431",
+      "PRD-1435"
+    ]
+  },
+  {
+    "customer_id": "CUST-050",
+    "name": "Eric Carney",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "36",
+      "shoes": "12"
+    },
+    "style_preferences": [
+      "streetwear",
+      "breathable",
+      "outdoor",
+      "techwear",
+      "minimalist"
+    ],
+    "purchase_history": [
+      "PRD-1073",
+      "PRD-1420"
+    ]
+  },
+  {
+    "customer_id": "CUST-051",
+    "name": "Jessica Holmes",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "34",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "formalwear",
+      "casual",
+      "athleisure"
+    ],
+    "purchase_history": [
+      "PRD-1342",
+      "PRD-1052",
+      "PRD-1492",
+      "PRD-1302"
+    ]
+  },
+  {
+    "customer_id": "CUST-052",
+    "name": "Danny Morgan",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "38",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "durable",
+      "casual",
+      "classic",
+      "formalwear"
+    ],
+    "purchase_history": [
+      "PRD-1238"
+    ]
+  },
+  {
+    "customer_id": "CUST-053",
+    "name": "Crystal Robinson",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "40",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "preppy",
+      "lightweight"
+    ],
+    "purchase_history": [
+      "PRD-1289"
+    ]
+  },
+  {
+    "customer_id": "CUST-054",
+    "name": "Mark Perez",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "28",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "waterproof",
+      "lightweight",
+      "minimalist",
+      "vintage"
+    ],
+    "purchase_history": [
+      "PRD-1240",
+      "PRD-1452"
+    ]
+  },
+  {
+    "customer_id": "CUST-055",
+    "name": "Shannon Jones",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "42",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "vintage",
+      "classic"
+    ],
+    "purchase_history": [
+      "PRD-1439",
+      "PRD-1441",
+      "PRD-1258",
+      "PRD-1108",
+      "PRD-1179",
+      "PRD-1463",
+      "PRD-1362",
+      "PRD-1269"
+    ]
+  },
+  {
+    "customer_id": "CUST-056",
+    "name": "Michael Lewis",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "30",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "classic",
+      "techwear",
+      "luxury"
+    ],
+    "purchase_history": [
+      "PRD-1143",
+      "PRD-1402"
+    ]
+  },
+  {
+    "customer_id": "CUST-057",
+    "name": "Timothy Duncan",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "36",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "formalwear",
+      "durable"
+    ],
+    "purchase_history": [
+      "PRD-1311",
+      "PRD-1338",
+      "PRD-1093",
+      "PRD-1295",
+      "PRD-1363",
+      "PRD-1475",
+      "PRD-1260"
+    ]
+  },
+  {
+    "customer_id": "CUST-058",
+    "name": "Richard Aguirre",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "36",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "classic",
+      "durable",
+      "waterproof",
+      "minimalist"
+    ],
+    "purchase_history": []
+  },
+  {
+    "customer_id": "CUST-059",
+    "name": "Brent Jordan",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "32",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "streetwear",
+      "formalwear"
+    ],
+    "purchase_history": [
+      "PRD-1166",
+      "PRD-1390",
+      "PRD-1119",
+      "PRD-1396",
+      "PRD-1414",
+      "PRD-1470",
+      "PRD-1376"
+    ]
+  },
+  {
+    "customer_id": "CUST-060",
+    "name": "John Daniel",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "30",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "breathable",
+      "outdoor",
+      "minimalist",
+      "preppy",
+      "athleisure"
+    ],
+    "purchase_history": [
+      "PRD-1020"
+    ]
+  },
+  {
+    "customer_id": "CUST-061",
+    "name": "Victoria Garcia",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "30",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "minimalist",
+      "vintage",
+      "formalwear",
+      "waterproof"
+    ],
+    "purchase_history": [
+      "PRD-1194",
+      "PRD-1069",
+      "PRD-1327",
+      "PRD-1294",
+      "PRD-1285",
+      "PRD-1103",
+      "PRD-1101"
+    ]
+  },
+  {
+    "customer_id": "CUST-062",
+    "name": "Gerald Hensley",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "42",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "luxury",
+      "sustainable",
+      "classic",
+      "outdoor"
+    ],
+    "purchase_history": [
+      "PRD-1417",
+      "PRD-1271",
+      "PRD-1415",
+      "PRD-1405",
+      "PRD-1099",
+      "PRD-1045"
+    ]
+  },
+  {
+    "customer_id": "CUST-063",
+    "name": "Connor West",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "28",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "sustainable",
+      "waterproof"
+    ],
+    "purchase_history": [
+      "PRD-1458",
+      "PRD-1003"
+    ]
+  },
+  {
+    "customer_id": "CUST-064",
+    "name": "Donald Wright",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "40",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "techwear",
+      "vintage"
+    ],
+    "purchase_history": [
+      "PRD-1255",
+      "PRD-1098",
+      "PRD-1427",
+      "PRD-1107",
+      "PRD-1293",
+      "PRD-1424",
+      "PRD-1243",
+      "PRD-1257"
+    ]
+  },
+  {
+    "customer_id": "CUST-065",
+    "name": "Jessica Callahan",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "38",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "outdoor",
+      "lightweight",
+      "sustainable"
+    ],
+    "purchase_history": [
+      "PRD-1448",
+      "PRD-1037",
+      "PRD-1292",
+      "PRD-1041",
+      "PRD-1066",
+      "PRD-1401"
+    ]
+  },
+  {
+    "customer_id": "CUST-066",
+    "name": "Amber Kidd",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "36",
+      "shoes": "6"
+    },
+    "style_preferences": [
+      "formalwear",
+      "luxury"
+    ],
+    "purchase_history": []
+  },
+  {
+    "customer_id": "CUST-067",
+    "name": "Tracy House",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "38",
+      "shoes": "6"
+    },
+    "style_preferences": [
+      "preppy",
+      "bohemian",
+      "sustainable"
+    ],
+    "purchase_history": [
+      "PRD-1035",
+      "PRD-1447",
+      "PRD-1081",
+      "PRD-1496",
+      "PRD-1148"
+    ]
+  },
+  {
+    "customer_id": "CUST-068",
+    "name": "Carol Tucker",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "34",
+      "shoes": "12"
+    },
+    "style_preferences": [
+      "durable",
+      "waterproof",
+      "bohemian",
+      "classic"
+    ],
+    "purchase_history": [
+      "PRD-1299"
+    ]
+  },
+  {
+    "customer_id": "CUST-069",
+    "name": "James Brown",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "36",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "waterproof",
+      "techwear"
+    ],
+    "purchase_history": [
+      "PRD-1134",
+      "PRD-1103",
+      "PRD-1172",
+      "PRD-1455",
+      "PRD-1392",
+      "PRD-1031"
+    ]
+  },
+  {
+    "customer_id": "CUST-070",
+    "name": "William Baker",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "34",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "waterproof",
+      "luxury",
+      "formalwear",
+      "casual"
+    ],
+    "purchase_history": []
+  },
+  {
+    "customer_id": "CUST-071",
+    "name": "Jordan Henderson",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "30",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "formalwear",
+      "athleisure"
+    ],
+    "purchase_history": [
+      "PRD-1371",
+      "PRD-1022",
+      "PRD-1054",
+      "PRD-1019"
+    ]
+  },
+  {
+    "customer_id": "CUST-072",
+    "name": "Whitney Peters",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "34",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "breathable",
+      "formalwear",
+      "athleisure",
+      "durable"
+    ],
+    "purchase_history": [
+      "PRD-1011",
+      "PRD-1477",
+      "PRD-1029"
+    ]
+  },
+  {
+    "customer_id": "CUST-073",
+    "name": "Brittney Phillips",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "34",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "minimalist",
+      "formalwear",
+      "casual",
+      "sustainable",
+      "durable"
+    ],
+    "purchase_history": [
+      "PRD-1357",
+      "PRD-1065",
+      "PRD-1221",
+      "PRD-1360",
+      "PRD-1219",
+      "PRD-1282"
+    ]
+  },
+  {
+    "customer_id": "CUST-074",
+    "name": "Lauren Daniels",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "30",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "classic",
+      "casual"
+    ],
+    "purchase_history": [
+      "PRD-1176",
+      "PRD-1224",
+      "PRD-1471"
+    ]
+  },
+  {
+    "customer_id": "CUST-075",
+    "name": "Amy Silva",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "34",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "minimalist",
+      "luxury"
+    ],
+    "purchase_history": [
+      "PRD-1383",
+      "PRD-1386",
+      "PRD-1455",
+      "PRD-1414",
+      "PRD-1407",
+      "PRD-1275"
+    ]
+  },
+  {
+    "customer_id": "CUST-076",
+    "name": "Sarah Moore",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "28",
+      "shoes": "12"
+    },
+    "style_preferences": [
+      "luxury",
+      "waterproof"
+    ],
+    "purchase_history": [
+      "PRD-1030"
+    ]
+  },
+  {
+    "customer_id": "CUST-077",
+    "name": "Angela Lopez",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "42",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "waterproof",
+      "techwear",
+      "vintage",
+      "preppy"
+    ],
+    "purchase_history": [
+      "PRD-1150",
+      "PRD-1067",
+      "PRD-1311"
+    ]
+  },
+  {
+    "customer_id": "CUST-078",
+    "name": "Megan Young",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "42",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "outdoor",
+      "casual"
+    ],
+    "purchase_history": [
+      "PRD-1481",
+      "PRD-1279",
+      "PRD-1106",
+      "PRD-1254"
+    ]
+  },
+  {
+    "customer_id": "CUST-079",
+    "name": "Steve Sanchez",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "38",
+      "shoes": "12"
+    },
+    "style_preferences": [
+      "lightweight",
+      "preppy",
+      "vintage"
+    ],
+    "purchase_history": [
+      "PRD-1150",
+      "PRD-1445",
+      "PRD-1335",
+      "PRD-1126",
+      "PRD-1270",
+      "PRD-1458",
+      "PRD-1137",
+      "PRD-1164"
+    ]
+  },
+  {
+    "customer_id": "CUST-080",
+    "name": "Lisa Barnes",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "30",
+      "shoes": "6"
+    },
+    "style_preferences": [
+      "breathable",
+      "formalwear",
+      "athleisure",
+      "waterproof"
+    ],
+    "purchase_history": [
+      "PRD-1467",
+      "PRD-1071",
+      "PRD-1431"
+    ]
+  },
+  {
+    "customer_id": "CUST-081",
+    "name": "Kelly Donovan",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "34",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "streetwear",
+      "classic",
+      "formalwear"
+    ],
+    "purchase_history": [
+      "PRD-1019",
+      "PRD-1121"
+    ]
+  },
+  {
+    "customer_id": "CUST-082",
+    "name": "Mike Allen",
+    "size_profile": {
+      "tops": "XXL",
+      "bottoms": "42",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "streetwear",
+      "minimalist",
+      "luxury",
+      "breathable",
+      "formalwear"
+    ],
+    "purchase_history": [
+      "PRD-1143",
+      "PRD-1302",
+      "PRD-1197",
+      "PRD-1154"
+    ]
+  },
+  {
+    "customer_id": "CUST-083",
+    "name": "Michael Evans",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "28",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "formalwear",
+      "minimalist",
+      "breathable",
+      "sustainable",
+      "lightweight"
+    ],
+    "purchase_history": [
+      "PRD-1023",
+      "PRD-1115",
+      "PRD-1106",
+      "PRD-1195",
+      "PRD-1095",
+      "PRD-1338",
+      "PRD-1221"
+    ]
+  },
+  {
+    "customer_id": "CUST-084",
+    "name": "Paul Jones",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "28",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "waterproof",
+      "classic",
+      "lightweight",
+      "minimalist"
+    ],
+    "purchase_history": [
+      "PRD-1473",
+      "PRD-1425",
+      "PRD-1465",
+      "PRD-1135",
+      "PRD-1415"
+    ]
+  },
+  {
+    "customer_id": "CUST-085",
+    "name": "Zachary Ferrell",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "34",
+      "shoes": "12"
+    },
+    "style_preferences": [
+      "techwear",
+      "breathable"
+    ],
+    "purchase_history": [
+      "PRD-1401",
+      "PRD-1374",
+      "PRD-1476",
+      "PRD-1377",
+      "PRD-1386",
+      "PRD-1030"
+    ]
+  },
+  {
+    "customer_id": "CUST-086",
+    "name": "Daniel Baker",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "40",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "lightweight",
+      "breathable",
+      "preppy",
+      "classic"
+    ],
+    "purchase_history": [
+      "PRD-1134",
+      "PRD-1084",
+      "PRD-1492",
+      "PRD-1196",
+      "PRD-1240",
+      "PRD-1382",
+      "PRD-1474",
+      "PRD-1122"
+    ]
+  },
+  {
+    "customer_id": "CUST-087",
+    "name": "Shirley Suarez",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "28",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "outdoor",
+      "luxury",
+      "durable",
+      "bohemian"
+    ],
+    "purchase_history": [
+      "PRD-1173",
+      "PRD-1293",
+      "PRD-1203",
+      "PRD-1020"
+    ]
+  },
+  {
+    "customer_id": "CUST-088",
+    "name": "Christopher Bass",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "36",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "bohemian",
+      "minimalist",
+      "waterproof",
+      "athleisure"
+    ],
+    "purchase_history": [
+      "PRD-1429",
+      "PRD-1136",
+      "PRD-1434",
+      "PRD-1092",
+      "PRD-1228"
+    ]
+  },
+  {
+    "customer_id": "CUST-089",
+    "name": "Lisa Archer",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "28",
+      "shoes": "9"
+    },
+    "style_preferences": [
+      "lightweight",
+      "waterproof"
+    ],
+    "purchase_history": [
+      "PRD-1246",
+      "PRD-1327",
+      "PRD-1433",
+      "PRD-1285",
+      "PRD-1112"
+    ]
+  },
+  {
+    "customer_id": "CUST-090",
+    "name": "Aimee Montoya",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "28",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "bohemian",
+      "techwear"
+    ],
+    "purchase_history": [
+      "PRD-1226"
+    ]
+  },
+  {
+    "customer_id": "CUST-091",
+    "name": "Matthew Mcmillan",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "36",
+      "shoes": "12"
+    },
+    "style_preferences": [
+      "bohemian",
+      "formalwear",
+      "outdoor",
+      "streetwear"
+    ],
+    "purchase_history": [
+      "PRD-1076",
+      "PRD-1447"
+    ]
+  },
+  {
+    "customer_id": "CUST-092",
+    "name": "Brian Rodriguez",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "28",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "waterproof",
+      "vintage"
+    ],
+    "purchase_history": [
+      "PRD-1441",
+      "PRD-1226",
+      "PRD-1297",
+      "PRD-1163",
+      "PRD-1022",
+      "PRD-1284",
+      "PRD-1368",
+      "PRD-1117"
+    ]
+  },
+  {
+    "customer_id": "CUST-093",
+    "name": "Denise Jacobs",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "36",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "classic",
+      "waterproof"
+    ],
+    "purchase_history": [
+      "PRD-1180",
+      "PRD-1056",
+      "PRD-1040"
+    ]
+  },
+  {
+    "customer_id": "CUST-094",
+    "name": "Christina Walters",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "42",
+      "shoes": "6"
+    },
+    "style_preferences": [
+      "luxury",
+      "sustainable"
+    ],
+    "purchase_history": [
+      "PRD-1293",
+      "PRD-1191",
+      "PRD-1425",
+      "PRD-1422",
+      "PRD-1349"
+    ]
+  },
+  {
+    "customer_id": "CUST-095",
+    "name": "John Whitehead",
+    "size_profile": {
+      "tops": "L",
+      "bottoms": "30",
+      "shoes": "11"
+    },
+    "style_preferences": [
+      "preppy",
+      "athleisure",
+      "minimalist",
+      "vintage",
+      "casual"
+    ],
+    "purchase_history": [
+      "PRD-1172",
+      "PRD-1500",
+      "PRD-1209",
+      "PRD-1460",
+      "PRD-1334"
+    ]
+  },
+  {
+    "customer_id": "CUST-096",
+    "name": "Anna Henderson",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "42",
+      "shoes": "8"
+    },
+    "style_preferences": [
+      "vintage",
+      "classic"
+    ],
+    "purchase_history": []
+  },
+  {
+    "customer_id": "CUST-097",
+    "name": "Aaron Wise",
+    "size_profile": {
+      "tops": "M",
+      "bottoms": "32",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "streetwear",
+      "sustainable"
+    ],
+    "purchase_history": [
+      "PRD-1262",
+      "PRD-1367",
+      "PRD-1400",
+      "PRD-1380",
+      "PRD-1261"
+    ]
+  },
+  {
+    "customer_id": "CUST-098",
+    "name": "Deborah Figueroa",
+    "size_profile": {
+      "tops": "XL",
+      "bottoms": "38",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "waterproof",
+      "athleisure",
+      "sustainable",
+      "durable",
+      "techwear"
+    ],
+    "purchase_history": [
+      "PRD-1490"
+    ]
+  },
+  {
+    "customer_id": "CUST-099",
+    "name": "Jessica Smith",
+    "size_profile": {
+      "tops": "XS",
+      "bottoms": "34",
+      "shoes": "10"
+    },
+    "style_preferences": [
+      "streetwear",
+      "waterproof",
+      "preppy",
+      "luxury",
+      "techwear"
+    ],
+    "purchase_history": [
+      "PRD-1267",
+      "PRD-1226",
+      "PRD-1163",
+      "PRD-1138",
+      "PRD-1100",
+      "PRD-1429",
+      "PRD-1295",
+      "PRD-1151"
+    ]
+  },
+  {
+    "customer_id": "CUST-100",
+    "name": "Stephen Mckee",
+    "size_profile": {
+      "tops": "S",
+      "bottoms": "38",
+      "shoes": "7"
+    },
+    "style_preferences": [
+      "luxury",
+      "lightweight",
+      "vintage",
+      "classic"
+    ],
+    "purchase_history": [
+      "PRD-1355"
+    ]
+  }
+]
