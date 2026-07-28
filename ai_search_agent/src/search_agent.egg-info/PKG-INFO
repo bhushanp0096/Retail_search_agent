@@ -3,4 +3,9 @@ Name: search-agent
 Version: 0.1.0
 Summary: LangGraph-based AI search agent MVP for a retail/e-commerce catalog
 Requires-Python: >=3.10
-Requires-Dist: python-dotenv>=1.2.2
+Requires-Dist: langchain-groq
+Requires-Dist: pydantic>=2.6
+Requires-Dist: langgraph>=0.2
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: pandas>=2.0
+Requires-Dist: typing_extensions>=4.9

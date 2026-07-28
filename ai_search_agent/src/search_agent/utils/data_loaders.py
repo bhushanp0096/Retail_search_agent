@@ -1,14 +1,15 @@
 """
-Data loaders for the static catalog/CRM files (`products.csv`, `customers.json`).
+Data loaders for the static catalog/CRM/inventory files.
 
-Both loaders are `lru_cache`d: the underlying files don't change during a
+`load_products` / `load_customers` return plain dicts (Stage 1/2's nodes
+are pure-stdlib, no pandas dependency). `load_inventory` returns a pandas
+DataFrame since Stage 3's join/filter/score logic is pandas-based — see
+`utils/join_and_score.py`.
+
+All three are `lru_cache`d: the underlying files don't change during a
 process's lifetime in this MVP, so every query re-reading/re-parsing them
 from disk would be pure waste. If you need to pick up edited data without
 restarting the process, call `.cache_clear()` on the relevant function.
-
-`inventory_pricing.csv` is intentionally NOT loaded here — that's Stage 3's
-concern (the relational join against candidate products), so its loader
-belongs next to that join logic, not here.
 """
 
 from __future__ import annotations
@@ -19,7 +20,9 @@ import logging
 from functools import lru_cache
 from typing import Any, Dict, List
 
-from search_agent.config import CUSTOMERS_JSON, PRODUCTS_CSV
+import pandas as pd
+
+from search_agent.config import CUSTOMERS_JSON, INVENTORY_CSV, PRODUCTS_CSV
 
 logger = logging.getLogger(__name__)
 
@@ -59,3 +62,20 @@ def load_customers() -> Dict[str, Dict[str, Any]]:
     by_id = {c["customer_id"]: c for c in customers}
     logger.info("Loaded %d customers from %s", len(by_id), CUSTOMERS_JSON)
     return by_id
+
+
+@lru_cache(maxsize=1)
+def load_inventory() -> pd.DataFrame:
+    """Loads inventory_pricing.csv as a pandas DataFrame, used by Stage 3's
+    join against candidate products.
+
+    Returns:
+        DataFrame with columns: sku_id, product_id, size, stock_count,
+        base_price, discount_percentage.
+    """
+    if not INVENTORY_CSV.exists():
+        raise FileNotFoundError(f"inventory_pricing.csv not found at {INVENTORY_CSV}")
+
+    inventory_df = pd.read_csv(INVENTORY_CSV)
+    logger.info("Loaded %d inventory rows from %s", len(inventory_df), INVENTORY_CSV)
+    return inventory_df

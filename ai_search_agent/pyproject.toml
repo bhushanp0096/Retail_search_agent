@@ -7,8 +7,14 @@ name = "search-agent"
 version = "0.1.0"
 description = "LangGraph-based AI search agent MVP for a retail/e-commerce catalog"
 requires-python = ">=3.10"
+
 dependencies = [
-    "python-dotenv>=1.2.2",
+    "langchain-groq",
+    "pydantic>=2.6",
+    "langgraph>=0.2",
+    "python-dotenv>=1.0",
+    "pandas>=2.0",
+    "typing_extensions>=4.9",
 ]
 
 [tool.setuptools.packages.find]
