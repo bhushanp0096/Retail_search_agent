@@ -1,6 +1,5 @@
 # Core LLM / structured output
-# anthropic>=0.120.0
-langchain-groq
+anthropic>=0.120.0
 pydantic>=2.6
 
 # Stage 4 (graph orchestration) - included now so the env is ready when we get there
@@ -15,5 +14,9 @@ pandas>=2.0
 # Typing backport used by schemas/state.py (Annotated/NotRequired on py<3.11)
 typing_extensions>=4.9
 
+# Stage 4 API layer
+fastapi>=0.115
+uvicorn[standard]>=0.30
+ipykernel
 # Dev / testing
 pytest>=8.0

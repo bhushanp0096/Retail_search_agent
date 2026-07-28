@@ -1,11 +1,16 @@
 """
-Thin wrapper around ChatGroq (via langchain_groq) for forced structured output.
+Thin wrappers around ChatGroq (via langchain_groq) for both plain-text
+generation and forced structured output.
 
 Why `.with_structured_output()` instead of raw prompting:
     LangChain's `.with_structured_output(schema)` binds the Pydantic model
     directly to the chat model, returning a validated Python object instead of
     raw text that we'd have to parse.  On validation failure we retry with the
     error fed back to the model so it can self-correct.
+
+GroqTextClient:
+    Plain-text generation (no forced tool-use) — used by Stage 4's synthesis
+    node, which just needs prose back rather than a validated structured object.
 """
 
 from __future__ import annotations
@@ -41,6 +46,48 @@ class StructuredCompletion:
     raw_tool_input: Dict[str, Any]
     model: str
     attempt: int
+
+class GroqTextClient:
+    """Thin wrapper for plain text generation (no forced tool-use) — used by
+    Stage 4's synthesis node, which just needs prose back, not a validated
+    structured object like `GroqStructuredClient`.
+
+    Mirrors the `GroqStructuredClient` constructor so both clients are
+    configured from the same :class:`LLMSettings` and share the same
+    `ChatGroq` dependency.
+    """
+
+    def __init__(
+        self,
+        llm_settings: Optional[LLMSettings] = None,
+        client: Optional[ChatGroq] = None,
+    ) -> None:
+        self.settings = llm_settings or default_settings.llm
+        # Allow an injected client (handy for tests); otherwise build from settings.
+        self._client: ChatGroq = client or ChatGroq(
+            model=self.settings.model,
+            temperature=self.settings.temperature,
+            api_key=os.getenv(self.settings.api_key_env_var) or None,  # type: ignore[arg-type]
+        )
+
+    def generate_text(self, *, system_prompt: str, user_prompt: str) -> str:
+        """Calls the Groq-hosted model and returns the response as a plain
+        text string.  Uses LangChain's `ChatGroq.invoke()` with a standard
+        [SystemMessage, HumanMessage] turn sequence.
+        """
+        messages = [
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=user_prompt),
+        ]
+        response = self._client.invoke(messages)
+        # AIMessage.content can be a str or a list of content blocks.
+        content = response.content
+        if isinstance(content, list):
+            return "\n".join(
+                block.get("text", "") if isinstance(block, dict) else str(block)
+                for block in content
+            ).strip()
+        return str(content).strip()
 
 
 class GroqStructuredClient:
@@ -82,8 +129,9 @@ class GroqStructuredClient:
             system_prompt: System-level instructions for the model.
             user_prompt: The user turn content.
             schema_model: Pydantic model class that defines the expected output shape.
-            tool_name: Unused by Groq path but kept for API compatibility.
-            tool_description: Unused by Groq path but kept for API compatibility.
+            tool_name: Passed to `with_structured_output` as the function/tool name
+                hint so the model targets the correct tool in its response.
+            tool_description: Forwarded as the tool description hint (where supported).
 
         Returns:
             A :class:`StructuredCompletion` with the validated parsed object.
@@ -91,7 +139,10 @@ class GroqStructuredClient:
         Raises:
             StructuredExtractionError: If all retry attempts are exhausted.
         """
-        structured_llm = self._client.with_structured_output(schema_model)
+        structured_llm = self._client.with_structured_output(
+            schema_model,
+            method="function_calling",
+        )
 
         messages: list = [
             SystemMessage(content=system_prompt),
@@ -102,8 +153,8 @@ class GroqStructuredClient:
 
         for attempt in range(1, total_attempts + 1):
             logger.debug(
-                "Calling model=%s attempt=%d/%d",
-                self.settings.model, attempt, total_attempts,
+                "Calling model=%s tool=%s attempt=%d/%d",
+                self.settings.model, tool_name, attempt, total_attempts,
             )
             try:
                 result = structured_llm.invoke(messages)
@@ -137,13 +188,13 @@ class GroqStructuredClient:
                     )
 
         raise StructuredExtractionError(
-            f"Failed to get valid structured output after {total_attempts} attempt(s). "
-            f"Last error: {last_error}"
+            f"Failed to get valid structured output for tool {tool_name!r} "
+            f"after {total_attempts} attempt(s). Last error: {last_error}"
         )
 
 
 # ---------------------------------------------------------------------------
-# Backwards-compatible alias so existing callers (stage1_intent_extraction,
-# tests) don't need immediate changes.
+# Backwards-compatible aliases so existing callers don't need immediate changes.
 # ---------------------------------------------------------------------------
 AnthropicStructuredClient = GroqStructuredClient
+AnthropicTextClient = GroqTextClient

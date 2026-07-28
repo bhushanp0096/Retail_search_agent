@@ -1,9 +1,18 @@
 """
-Placeholder for Stage 4 (LangGraph Compilation & Synthesis).
+Stage 4 - LangGraph Compilation & Synthesis.
 
-`builder.py` will construct the `StateGraph(GraphState)`, add all nodes from
-Stages 1-4, wire the Stage 2 parallel branch (2A candidate retrieval / 2B
-CRM lookup) with a fan-out/fan-in, set conditional routing where needed
-(e.g. skip personalization if `customer_id` is None), and `.compile()` the
-final runnable graph. Intentionally left unimplemented until Stage 4.
+Public API: `build_graph()` / `get_compiled_graph()` / `invoke_search_graph()`
+in `builder.py`, and the routing constants/function in `routing.py`.
 """
+
+from search_agent.graph.builder import build_graph, get_compiled_graph, invoke_search_graph
+from search_agent.graph.routing import HAS_RESULTS, NO_RESULTS, route_after_scoring
+
+__all__ = [
+    "build_graph",
+    "get_compiled_graph",
+    "invoke_search_graph",
+    "route_after_scoring",
+    "HAS_RESULTS",
+    "NO_RESULTS",
+]

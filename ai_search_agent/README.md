@@ -19,19 +19,26 @@ ai_search_agent/
 │   │   ├── stage1_intent_extraction.py    # extract_intent_node — the actual Stage 1 LangGraph node
 │   │   ├── stage2a_candidate_retrieval.py # fetch_candidates_node — TF-IDF ranks products.csv
 │   │   ├── stage2b_profile_fetch.py       # fetch_customer_profile_node — CRM lookup in customers.json
-│   │   └── stage3_join_and_score.py       # join_and_score_node — join + filter + composite rank
+│   │   ├── stage3_join_and_score.py       # join_and_score_node — join + filter + composite rank
+│   │   └── stage4_synthesis.py            # synthesis_node / no_results_node — final response generation
+│   ├── prompts/
+│   │   ├── intent_extraction_prompts.py   # Stage 1 system/user prompt text, isolated from node logic
+│   │   └── synthesis_prompts.py           # Stage 4 system/user prompt text + NO_RESULTS_RESPONSE
 │   ├── utils/
-│   │   ├── llm_client.py         # AnthropicStructuredClient — tool-use structured output + retry/validation
+│   │   ├── llm_client.py         # AnthropicStructuredClient (Stage 1) + AnthropicTextClient (Stage 4)
 │   │   ├── common.py             # log_node_execution decorator, NodeTiming dataclass (used by every stage)
 │   │   ├── data_loaders.py       # load_products() / load_customers() / load_inventory() — lru_cache'd readers
 │   │   ├── text_scoring.py       # custom stdlib TF-IDF scorer (tokenize, IDF table, rank_products)
 │   │   └── join_and_score.py     # pandas join/filter/composite-score logic (Stage 3), ported from the notebook
 │   └── graph/
-│       └── __init__.py           # placeholder — StateGraph wiring lands in Stage 4
+│       ├── builder.py            # build_graph() / get_compiled_graph() / invoke_search_graph()
+│       └── routing.py            # route_after_scoring() + HAS_RESULTS/NO_RESULTS constants
 ├── tests/
 │   └── test_stage1_intent_extraction.py   # fully offline (fake Anthropic client, no API key needed)
 ├── data/                          # products.csv / inventory_pricing.csv / customers.json
 ├── run_stage1_demo.py             # standalone script to exercise Stage 1 against sample queries
+├── main.py                        # CLI entrypoint — runs one query through the full graph
+├── app.py                         # FastAPI wrapper around the compiled graph
 ├── requirements.txt
 ├── pyproject.toml                 # `pip install -e .` for the search_agent package
 ├── pytest.ini                     # adds src/ to pythonpath so tests import search_agent cleanly
@@ -61,7 +68,7 @@ ai_search_agent/
 | **1** | State schema (`GraphState`) + intent extraction node (Pydantic + tool-use) | ✅ Implemented |
 | **2** | Parallel nodes: 2A TF-IDF/string-match candidate retrieval over `products.csv`; 2B CRM lookup against `customers.json` | ✅ Implemented |
 | **3** | Join candidates with `inventory_pricing.csv`, apply in-stock + size filters, compute composite relevance score | ✅ Implemented |
-| **4** | Wire `StateGraph`, conditional routing + parallel branches, compile, final LLM synthesis node | 🔜 Next |
+| **4** | Wire `StateGraph`, conditional routing + parallel branches, compile, final LLM synthesis node | ✅ Implemented |
 
 ## Stage 1 — What it does
 
@@ -160,6 +167,70 @@ Error handling here is intentionally simple — no retry loop, unlike Stage
 `{"filtered_skus": [], "errors": [...]}`. An **empty result is not an
 error** on its own (it can legitimately mean "nothing in stock in your
 size") — only unexpected exceptions go into `errors`.
+
+## Stage 4 — What it does
+
+`graph/builder.py` wires every stage into one `StateGraph`:
+
+```
+START -> extract_intent -> [fetch_candidates, fetch_profile]   (fan-out, run concurrently)
+       -> join_and_score                                       (fan-in)
+       -> route_after_scoring -> synthesis | no_results         (conditional)
+       -> END
+```
+
+- **`route_after_scoring`** (`graph/routing.py`) checks `state["filtered_skus"]`
+  after Stage 3: non-empty goes to `synthesis`, empty goes to `no_results`.
+  An empty result is a real, expected outcome (see the Stage 3/4 exploration
+  notebooks) — it gets its own honest response, not a hallucinated one.
+- **`synthesis_node`** calls Claude (via `AnthropicTextClient`, plain text
+  generation — no forced tool-use needed here) with a prompt built from
+  `filtered_skus`, `customer_profile`, and the original query. Like Stage 1,
+  it never raises: an LLM failure falls back to a generic "Here are N
+  result(s)" message plus a logged error, rather than crashing the request.
+- **`no_results_node`** is a static response — no LLM call needed for
+  "we don't have anything," which is one less thing that can fail on an
+  already-negative outcome.
+- **Checkpointing**: the compiled graph uses LangGraph's `MemorySaver`,
+  keyed by `thread_id`. This was genuinely a free add-on — no changes to
+  any node or to `GraphState` — so it's included now rather than deferred.
+  It's in-memory only (state is lost on process restart); swapping in a
+  persistent checkpointer later is a one-line change in `build_graph()`.
+- **`invoke_search_graph(raw_query, customer_id=None, thread_id=None)`** is
+  the one function both `main.py` and `app.py` call — neither needs to
+  touch `StateGraph` directly.
+
+**A fix made along the way:** while wiring this up, `extract_intent_node`
+turned out to only catch `StructuredExtractionError` — a raw API/auth/
+network error from the Anthropic SDK would have propagated uncaught and
+crashed the graph, contradicting its own "never raise" design goal from
+Stage 1. Broadened its except clause to cover any exception, not just
+validation-retry exhaustion.
+
+## Running the CLI
+
+```bash
+python main.py "waterproof jacket for an October coastal wedding" --customer-id CUST-001 --show-skus
+```
+
+Works even without `ANTHROPIC_API_KEY` set — Stage 1 degrades to an empty
+intent (logged as a non-fatal error) and Stage 4 typically lands on the
+no-results branch, so you can exercise the full graph's wiring without a key.
+
+## Running the API
+
+```bash
+uvicorn app:app --reload
+```
+
+```bash
+curl -X POST http://127.0.0.1:8000/search \\
+    -H "Content-Type: application/json" \\
+    -d '{"query": "waterproof jacket for an October coastal wedding", "customer_id": "CUST-001"}'
+```
+
+Interactive docs at `http://127.0.0.1:8000/docs`. `GET /health` is a plain
+liveness check that doesn't touch the graph or the LLM.
 
 ## Setup
 

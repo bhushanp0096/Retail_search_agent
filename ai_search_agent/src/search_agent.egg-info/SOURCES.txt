@@ -9,13 +9,17 @@ src/search_agent.egg-info/dependency_links.txt
 src/search_agent.egg-info/requires.txt
 src/search_agent.egg-info/top_level.txt
 src/search_agent/graph/__init__.py
+src/search_agent/graph/builder.py
+src/search_agent/graph/routing.py
 src/search_agent/nodes/__init__.py
 src/search_agent/nodes/stage1_intent_extraction.py
 src/search_agent/nodes/stage2a_candidate_retrieval.py
 src/search_agent/nodes/stage2b_profile_fetch.py
 src/search_agent/nodes/stage3_join_and_score.py
+src/search_agent/nodes/stage4_synthesis.py
 src/search_agent/prompts/__init__.py
 src/search_agent/prompts/intent_extraction_prompts.py
+src/search_agent/prompts/synthesis_prompts.py
 src/search_agent/schemas/__init__.py
 src/search_agent/schemas/intent.py
 src/search_agent/schemas/state.py
