@@ -35,7 +35,7 @@ class LLMSettings:
 
     # Current Claude model lineup (see Grow docs for the full/latest list).
     # Overridable per-environment without touching code.
-    model: str = field(default_factory=lambda: os.getenv("SEARCH_AGENT_LLM_MODEL", "claude-sonnet-5"))
+    model: str = field(default_factory=lambda: os.getenv("SEARCH_AGENT_LLM_MODEL", "llama-3.3-70b-versatile"))
     max_tokens: int = field(default_factory=lambda: int(os.getenv("SEARCH_AGENT_MAX_TOKENS", "1024")))
     temperature: float = field(default_factory=lambda: float(os.getenv("SEARCH_AGENT_TEMPERATURE", "0.0")))
     max_retries: int = field(default_factory=lambda: int(os.getenv("SEARCH_AGENT_LLM_MAX_RETRIES", "2")))
