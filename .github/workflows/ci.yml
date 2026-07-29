@@ -30,7 +30,7 @@ jobs:
           pip install -e .
 
       - name: Run test suite (fully offline — no API key needed)
-      continue-on-error: true
+        continue-on-error: true
         run: pytest -v
 
       - name: Smoke-test the CLI (graceful degradation — no API key needed)
