@@ -17,7 +17,9 @@ dependencies = [
     "typing_extensions>=4.9",
     "fastapi>=0.115",
     "uvicorn[standard]>=0.30",
-    "ipykernel>=6.25.2"
+    "ipykernel>=6.25.2",
+    "streamlit>=1.38",
+    "requests>=2.32"
 ]
 
 [tool.setuptools.packages.find]

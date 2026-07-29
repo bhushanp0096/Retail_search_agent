@@ -39,6 +39,10 @@ ai_search_agent/
 ├── run_stage1_demo.py             # standalone script to exercise Stage 1 against sample queries
 ├── main.py                        # CLI entrypoint — runs one query through the full graph
 ├── app.py                         # FastAPI wrapper around the compiled graph
+├── streamlit_app.py               # Streamlit frontend, calls the FastAPI backend over HTTP
+├── Dockerfile                     # single image, used for both the API and the Streamlit containers
+├── docker-compose.yml             # runs api + frontend services from that one image
+├── .dockerignore                  # keeps .env/secrets and dev artifacts out of the build context
 ├── requirements.txt
 ├── pyproject.toml                 # `pip install -e .` for the search_agent package
 ├── pytest.ini                     # adds src/ to pythonpath so tests import search_agent cleanly
@@ -231,6 +235,53 @@ curl -X POST http://127.0.0.1:8000/search \\
 
 Interactive docs at `http://127.0.0.1:8000/docs`. `GET /health` is a plain
 liveness check that doesn't touch the graph or the LLM.
+
+## Running the Streamlit frontend
+
+Talks to the FastAPI backend over HTTP — no direct import of `search_agent`,
+so it can run as its own process/container hitting the API over the network.
+
+```bash
+# with the API already running separately (see above)
+export BACKEND_URL=http://localhost:8000
+streamlit run streamlit_app.py
+```
+
+Open `http://localhost:8501`. The sidebar shows backend health, lets you set
+an optional `customer_id`, and has a "persist conversation" toggle that
+reuses the same `thread_id` across searches (exercising the checkpointer
+from Stage 4).
+
+## Running with Docker
+
+One `Dockerfile`, one image — the API and the Streamlit frontend are the
+*same* image run with different commands (see `docker-compose.yml`).
+**Your `.env` file is never baked into the image**: it's excluded via
+`.dockerignore`, and injected at container *run time* only, via
+`env_file: .env` in Compose (or `docker run --env-file .env ...` if you're
+not using Compose). This keeps `ANTHROPIC_API_KEY` out of the image layers,
+`docker history`, and any registry the image might get pushed to.
+
+```bash
+cp .env.example .env      # fill in ANTHROPIC_API_KEY
+docker compose up --build
+```
+
+- Frontend: `http://localhost:8501`
+- API docs: `http://localhost:8000/docs`
+
+The frontend container waits for the API container to report healthy
+(`depends_on: condition: service_healthy`) before starting, and reaches it
+by its Compose service name (`BACKEND_URL=http://api:8000`), not
+`localhost` — containers on the same Compose network resolve each other by
+service name.
+
+To run just the API container standalone (no Compose):
+
+```bash
+docker build -t search-agent .
+docker run -p 8000:8000 --env-file .env search-agent
+```
 
 ## Setup
 

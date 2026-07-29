@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import logging
 import sys
-from logging.handlers import RotatingFileHandler
+from datetime import datetime
 
 from search_agent.config import LOG_DIR, settings
 
@@ -46,9 +46,9 @@ def setup_logging(level: str | None = None, log_to_file: bool | None = None) -> 
 
     if resolved_log_to_file:
         LOG_DIR.mkdir(parents=True, exist_ok=True)
-        file_handler = RotatingFileHandler(
-            LOG_DIR / "search_agent.log", maxBytes=5_000_000, backupCount=3
-        )
+        session_ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        log_file = LOG_DIR / f"search_agent_{session_ts}.log"
+        file_handler = logging.FileHandler(log_file, encoding="utf-8")
         file_handler.setFormatter(formatter)
         root_logger.addHandler(file_handler)
 

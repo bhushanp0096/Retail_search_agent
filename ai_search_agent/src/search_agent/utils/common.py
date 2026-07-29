@@ -52,9 +52,11 @@ def log_node_execution(node_name: str) -> Callable[[F], F]:
         def wrapper(*args: Any, **kwargs: Any) -> Any:
             start = time.perf_counter()
             logger.info("[%s] starting", node_name)
+            logger.debug("[%s] INPUT state=%s", node_name, args[0] if args else kwargs)
             try:
                 result = func(*args, **kwargs)
                 duration_ms = (time.perf_counter() - start) * 1000
+                logger.debug("[%s] OUTPUT=%s", node_name, result)
                 timing = NodeTiming(node_name=node_name, duration_ms=duration_ms, success=True)
                 logger.info("[%s] completed in %.1fms", timing.node_name, timing.duration_ms)
                 return result
