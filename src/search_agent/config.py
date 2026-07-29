@@ -31,15 +31,15 @@ CUSTOMERS_JSON: Path = DATA_DIR / "customers.json"
 
 @dataclass(frozen=True)
 class LLMSettings:
-    """Settings for the Anthropic client used for structured extraction / synthesis."""
+    """Settings for the Grow client used for structured extraction / synthesis."""
 
-    # Current Claude model lineup (see Anthropic docs for the full/latest list).
+    # Current Claude model lineup (see Grow docs for the full/latest list).
     # Overridable per-environment without touching code.
     model: str = field(default_factory=lambda: os.getenv("SEARCH_AGENT_LLM_MODEL", "claude-sonnet-5"))
     max_tokens: int = field(default_factory=lambda: int(os.getenv("SEARCH_AGENT_MAX_TOKENS", "1024")))
     temperature: float = field(default_factory=lambda: float(os.getenv("SEARCH_AGENT_TEMPERATURE", "0.0")))
     max_retries: int = field(default_factory=lambda: int(os.getenv("SEARCH_AGENT_LLM_MAX_RETRIES", "2")))
-    api_key_env_var: str = "ANTHROPIC_API_KEY"
+    api_key_env_var: str = "GROQ_API_KEY"
 
 
 @dataclass(frozen=True)
