@@ -1,0 +1,37 @@
+# Secrets — NEVER let these into the build context or image layers.
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Notebooks (dev-only, not needed at runtime) and their checkpoints
+*.ipynb
+.ipynb_checkpoints/
+
+# Tests (not needed at runtime)
+tests/
+pytest.ini
+
+# Git / editor / OS cruft
+.git/
+.gitignore
+.vscode/
+.idea/
+.DS_Store
+
+# Logs (generated at runtime, not build time)
+logs/
+*.log
+
+# This Dockerfile/compose itself don't need to be in the image
+Dockerfile
+docker-compose.yml
+.dockerignore

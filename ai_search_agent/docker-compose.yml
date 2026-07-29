@@ -1,0 +1,43 @@
+# Runs two containers from the same image (see Dockerfile): the FastAPI
+# backend and the Streamlit frontend, talking to each other over the
+# compose-managed network by service name.
+#
+# Usage:
+#   cp .env.example .env      # fill in ANTHROPIC_API_KEY
+#   docker compose up --build
+#
+# Frontend: http://localhost:8501
+# API docs: http://localhost:8000/docs
+
+services:
+  api:
+    build: .
+    image: search-agent:latest
+    command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env  # ANTHROPIC_API_KEY (and any SEARCH_AGENT_* overrides) injected at runtime only
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  frontend:
+    build: .
+    image: search-agent:latest
+    command: ["streamlit", "run", "streamlit_app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    ports:
+      - "8501:8501"
+    environment:
+      # Reaches the API container by its compose service name, not localhost.
+      - BACKEND_URL=http://api:8000
+    env_file:
+      - .env
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped

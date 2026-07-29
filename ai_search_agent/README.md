@@ -1,5 +1,8 @@
 # AI Search Agent MVP
 
+[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
+<!-- Replace OWNER/REPO above with your actual GitHub owner/repo once pushed. -->
+
 A LangGraph-based conversational search agent over a synthetic retail/e-commerce
 catalog (`products.csv`, `inventory_pricing.csv`, `customers.json`).
 
@@ -7,6 +10,9 @@ catalog (`products.csv`, `inventory_pricing.csv`, `customers.json`).
 
 ```
 ai_search_agent/
+├── .github/
+│   └── workflows/
+│       └── ci.yml                 # test -> build/health-check/push Docker image (GHCR)
 ├── src/search_agent/
 │   ├── config.py                 # env-driven settings (paths, model, retries) — single source of truth
 │   ├── logging_config.py         # one setup_logging() call, consistent format everywhere
@@ -217,7 +223,7 @@ validation-retry exhaustion.
 python main.py "waterproof jacket for an October coastal wedding" --customer-id CUST-001 --show-skus
 ```
 
-Works even without `ANTHROPIC_API_KEY` set — Stage 1 degrades to an empty
+Works even without `GROQ_API_KEY` set — Stage 1 degrades to an empty
 intent (logged as a non-fatal error) and Stage 4 typically lands on the
 no-results branch, so you can exercise the full graph's wiring without a key.
 
@@ -259,11 +265,11 @@ One `Dockerfile`, one image — the API and the Streamlit frontend are the
 **Your `.env` file is never baked into the image**: it's excluded via
 `.dockerignore`, and injected at container *run time* only, via
 `env_file: .env` in Compose (or `docker run --env-file .env ...` if you're
-not using Compose). This keeps `ANTHROPIC_API_KEY` out of the image layers,
+not using Compose). This keeps `GROQ_API_KEY` out of the image layers,
 `docker history`, and any registry the image might get pushed to.
 
 ```bash
-cp .env.example .env      # fill in ANTHROPIC_API_KEY
+cp .env.example .env      # fill in GROQ_API_KEY
 docker compose up --build
 ```
 
@@ -283,13 +289,34 @@ docker build -t search-agent .
 docker run -p 8000:8000 --env-file .env search-agent
 ```
 
+## CI/CD (GitHub Actions)
+
+`.github/workflows/ci.yml` runs on every push/PR to `main`, plus a manual
+"Run workflow" button. Two jobs:
+
+1. **`test`** — installs deps, runs the full offline test suite (no API
+   key needed), then smoke-tests `main.py` twice: once with no key
+   (exercises the graceful-degradation path), and once with a real key
+   *if* the `GROQ_API_KEY` secret is set on the repo (best-effort,
+   `continue-on-error: true` — an LLM hiccup shouldn't fail your CI).
+2. **`docker`** — builds the image, actually runs it and polls `/health`
+   (catches real container startup issues, not just "does it build"), and
+   — only on a push to `main` — pushes it to GitHub Container Registry
+   (GHCR) tagged `:latest` and `:<commit-sha>`. PRs get a build+health-check
+   only, never a push.
+
+No secret is required for the `test` job or for building/health-checking
+the image — only the optional real-LLM smoke test and the GHCR push need
+anything from you (and GHCR push uses the automatic `GITHUB_TOKEN`, not a
+secret you create).
+
 ## Setup
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 pip install -e .          # installs `search_agent` from src/ in editable mode
-cp .env.example .env      # then fill in ANTHROPIC_API_KEY
+cp .env.example .env      # then fill in GROQ_API_KEY
 ```
 
 ## Running Stage 1
