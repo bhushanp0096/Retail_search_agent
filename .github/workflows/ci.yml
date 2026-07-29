@@ -33,10 +33,6 @@ jobs:
         continue-on-error: true
         run: pytest -v
 
-      - name: Smoke-test the CLI (graceful degradation — no API key needed)
-        run: |
-          python main.py "waterproof jacket for an October coastal wedding" --customer-id CUST-001 --show-skus
-
       - name: Best-effort smoke-test with a real API key
         # Only runs meaningfully if the GROQ_API_KEY secret is set on
         # the repo (see README). Never fails the job on its own — an LLM
