@@ -18,7 +18,7 @@ from pydantic import BaseModel, ConfigDict, Field
 # (CATEGORIES / OCCASIONS / MATERIALS_BY_CATEGORY). If the catalog's vocab
 # changes, update these Literals too — that's what keeps structured output
 # reliable instead of "reliable most of the time".
-Category = Literal["Outerwear", "Footwear", "Tops", "Bottoms", "Accessories"]
+Category = Literal["Outerwear", "Footwear", "Tops", "Bottoms", "Accessories","Both top and Bottom", "Complete Outfit"]
 
 Occasion = Literal[
     "Casual", "Formal", "Wedding", "Outdoor", "Activewear", "Business", "Travel"
